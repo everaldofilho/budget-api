@@ -20,7 +20,7 @@ class Address
     /**
      * @ORM\Column(type="string", length=8)
      */
-    private $address;
+    private $street;
 
     /**
      * @ORM\Column(type="string", length=30)
@@ -53,19 +53,29 @@ class Address
      */
     private $client;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $main;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $alias;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getAddress(): ?string
+    public function getStreet(): ?string
     {
-        return $this->address;
+        return $this->street;
     }
 
-    public function setAddress(string $address): self
+    public function setStreet(string $street): self
     {
-        $this->address = $address;
+        $this->street = $street;
 
         return $this;
     }
@@ -138,6 +148,30 @@ class Address
     public function setClient(?Client $client): self
     {
         $this->client = $client;
+
+        return $this;
+    }
+
+    public function getMain(): ?bool
+    {
+        return $this->main;
+    }
+
+    public function setMain(bool $main): self
+    {
+        $this->main = $main;
+
+        return $this;
+    }
+
+    public function getAlias(): ?string
+    {
+        return $this->alias;
+    }
+
+    public function setAlias(string $alias): self
+    {
+        $this->alias = $alias;
 
         return $this;
     }

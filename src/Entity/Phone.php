@@ -33,6 +33,11 @@ class Phone
      */
     private $client;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $main;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class Phone
     public function setClient(?Client $client): self
     {
         $this->client = $client;
+
+        return $this;
+    }
+
+    public function getMain(): ?bool
+    {
+        return $this->main;
+    }
+
+    public function setMain(bool $main): self
+    {
+        $this->main = $main;
 
         return $this;
     }

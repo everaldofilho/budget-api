@@ -44,6 +44,16 @@ class Client
      */
     private $phones;
 
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $alias;
+
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $type;
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
@@ -166,6 +176,30 @@ class Client
                 $phone->setClient(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAlias(): ?string
+    {
+        return $this->alias;
+    }
+
+    public function setAlias(string $alias): self
+    {
+        $this->alias = $alias;
+
+        return $this;
+    }
+
+    public function getType(): ?int
+    {
+        return $this->type;
+    }
+
+    public function setType(int $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }
