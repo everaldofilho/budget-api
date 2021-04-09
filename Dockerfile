@@ -7,4 +7,5 @@ COPY . /app
 RUN composer install
 RUN bin/console doctrine:database:create -n
 RUN bin/console doctrine:migrations:migrate -n
+RUN chmod 777 -R /app
 
