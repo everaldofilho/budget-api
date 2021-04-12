@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /app
-php -S localhost:${PORT} -t ./public
+php -S 0.0.0.0:${PORT} -t ./public
