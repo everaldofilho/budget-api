@@ -3,6 +3,7 @@ services:
   app:
     build: .
     container_name: budget-api
+    user: myuser
     volumes:
       - ./:/app
     ports:
