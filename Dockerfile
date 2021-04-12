@@ -14,6 +14,7 @@ RUN chmod 777 -R /app/var
 RUN chmod +x /app/entrypoint.sh
 RUN chown myuser:myuser /app
 USER myuser
-# ENTRYPOINT [ "/app/entrypoint.sh" ]
+
+ENTRYPOINT [ "/app/entrypoint.sh" ]
 # CMD [ "id", "-u", "-n"]
 
