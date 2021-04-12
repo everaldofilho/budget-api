@@ -7,7 +7,7 @@ ENV COMPOSER_VERSION 2
 WORKDIR /app
 COPY . /app
 COPY ./supervisor.conf /opt/docker/etc/supervisor.conf
-RUN php composer.phar install
+RUN composer install
 RUN bin/console doctrine:database:create -n
 RUN bin/console doctrine:migrations:migrate -n
 RUN chmod 777 -R /app/var
