@@ -1,4 +1,5 @@
 FROM webdevops/php-nginx:7.4
+USER root
 ENV WEB_DOCUMENT_ROOT /app/public
 ENV WEB_DOCUMENT_INDEX index.php
 ENV COMPOSER_VERSION 2
@@ -9,6 +10,7 @@ RUN composer install
 RUN bin/console doctrine:database:create -n
 RUN bin/console doctrine:migrations:migrate -n
 RUN chmod 777 -R /app/var
-
-CMD [ "id", "-u", "-n"]
+RUN chmod +x /app/entrypoint.sh
+ENTRYPOINT [ "/app/entrypoint.sh" ]
+# CMD [ "id", "-u", "-n"]
 
