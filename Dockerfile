@@ -10,5 +10,5 @@ RUN bin/console doctrine:database:create -n
 RUN bin/console doctrine:migrations:migrate -n
 RUN chmod 777 -R /app/var
 
-CMD [ "php", "-S", "0.0.0.0:80", "-t", "public" ]
+CMD [ "id", "-u", "-n"]
 
