@@ -3,6 +3,7 @@ RUN adduser myuser
 USER root
 ENV WEB_DOCUMENT_ROOT /app/public
 ENV WEB_DOCUMENT_INDEX index.php
+ENV PORT 80
 ENV COMPOSER_VERSION 2
 WORKDIR /app
 COPY . /app
